@@ -28,7 +28,8 @@ const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
 
-function Bar ({navigation}) {
+
+function Bar ({navigation,name}) {
   return(
     <Tab.Navigator initialRouteName = 'bar'
       tabBarOptions = {{
@@ -51,9 +52,17 @@ function Bar ({navigation}) {
              <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_home.png')}/>)}
             }
         }}/>
+
         <Tab.Screen name = "MyBook"
         component = {MyBookScreen}
+        
         options = {{
+          title: bookData.Title2,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: '600',
+              fontSize: 20,
+            }, 
           tabBarLabel: "MyBook",
           tabBarIcon: ({focused}) => {
             if(focused){
@@ -64,6 +73,7 @@ function Bar ({navigation}) {
              <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_mybook.png')}/>)}
           }
         }}/>
+
         <Tab.Screen name = "Favorites"
         component = {FavoriteScreen}
         options = {{
@@ -79,15 +89,6 @@ function Bar ({navigation}) {
       </Tab.Navigator>
   );
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -133,6 +134,7 @@ const HomeStack  = ({navigation}) => {
           }}
         />         
       </Stack.Navigator>
+
   );
 }
 //MyBookheader
@@ -140,8 +142,8 @@ const MyBookStack  = ({navigation}) => {
   return (
       <Stack.Navigator >
         <Stack.Screen 
-        name = "Bar" 
-        component = {Bar}
+        name = "Mybook" 
+        component = {MyBookScreen}
           options={{
             title: bookData.Title2,
             headerTintColor: '#fff',
@@ -432,20 +434,9 @@ const App = () => {
     />                
   </Drawer.Navigator>
 
-
-
-
-
-
-
-
-
-
-
   </NavigationContainer>
 
     
-
   );
 }
     

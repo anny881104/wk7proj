@@ -61,6 +61,7 @@ const BookDetail = ({ bookList,navigation }) => {
 
 </View>
 );
+
 };
 const styles = StyleSheet.create({
 
