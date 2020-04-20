@@ -1,0 +1,20 @@
+{
+    "Title1": "Home",
+    "Title2": "My Book",
+    "Title3": "Favorites",
+    "Title4": "Settings",
+    "Title5": "About us",
+
+    "bookList": [
+       {
+       "booktitle": "The Immortalists",
+       "writer":"Chloe Benjamin",
+       "about":"If you were told the date of your death, how would it shape your…",
+       "percent":"50% completed",
+       "image": "https://cdn.zeplin.io/5e6edfd117dbf813ddad315b/assets/76195E1F-FE7C-44F4-B5E3-76ABC84057A8.png"
+       }
+    ]
+   
+    
+ 
+ }
