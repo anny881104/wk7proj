@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity, Linking} from "react-native";
-
 const BookDetail = ({ bookList,navigation }) => {
   return(
+  <View>
     <ScrollView>
     <View>
             <View style={styles.cardStyle}>
@@ -14,7 +14,10 @@ const BookDetail = ({ bookList,navigation }) => {
                 <Text style={styles.booktitle}>{bookList.booktitle}</Text>
                 <Text style={styles.writer}>{bookList.writer}</Text>
                 <Text style={styles.about}>{bookList.about}</Text>
-               
+                <Image 
+                        source={{uri: "https://raw.githubusercontent.com/anny881104/wk7proj/master/assets/gl.png"}}
+                        style={{ width: 220, height: 3}}
+                    />
                 <Text style={styles.percent}>{bookList.percent}</Text>
                 </View>
             </View>
@@ -27,7 +30,10 @@ const BookDetail = ({ bookList,navigation }) => {
                     <Text style={styles.booktitle}>Grist Mill Road</Text>
                     <Text style={styles.writer}>Christopher J.</Text>
                     <Text style={styles.about}>Twenty-six years ago Hannah had her eye shot out. Now she wants…</Text>
-                    
+                    <Image 
+                        source={{uri: "https://raw.githubusercontent.com/anny881104/wk7proj/master/assets/l.png"}}
+                        style={{ width: 220, height: 3}}
+                    />
                     <Text style={styles.startread}>START READ</Text>
                     </View>
            </View>
@@ -40,6 +46,10 @@ const BookDetail = ({ bookList,navigation }) => {
                     <Text style={styles.booktitle}>The Immortalists</Text>
                     <Text style={styles.writer}>Chloe Benjamin</Text>
                     <Text style={styles.about}>Street art is colorful, vibrant, diverse and exciting.Now, you can create…</Text>
+                    <Image 
+                        source={{uri: "https://raw.githubusercontent.com/anny881104/wk7proj/master/assets/l.png"}}
+                        style={{ width: 220, height: 3}}
+                    />
                     <Text style={styles.startread}>START READ</Text>
                     </View>
         </View>
@@ -47,7 +57,9 @@ const BookDetail = ({ bookList,navigation }) => {
 
     </View>
     </ScrollView>
- 
+      
+
+</View>
 );
 };
 const styles = StyleSheet.create({
@@ -96,5 +108,7 @@ const styles = StyleSheet.create({
       marginTop:14,
   },
   
+    
 });
+
 export default BookDetail;

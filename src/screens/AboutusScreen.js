@@ -1,23 +1,27 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet } from 'react-native';
+import { ScrollView,Text,StyleSheet,View } from 'react-native';
 
 // Make a component
 const AboutusScreen = ({ navigation }) => {
     return (
         <ScrollView style={{paddingTop: 44}}>
-            <Text style={styles.Word}>NOTHING ABOUT US</Text>
+             <View style={styles.box}>
+           <Text style={styles.word}>NOTHING ABOUT US</Text>
+          </View>
         </ScrollView>
     );
 }
 const styles = StyleSheet.create({
-
-    Word:{
-        marginLeft:130,
-        marginTop:100,
-        fontSize: 15,
-        fontWeight:"bold",
-        
-    },
+    box:{
+        flex:1, 
+        marginTop:200,
+        alignItems:"center",
+        justifyContent:"center",
+      },
+      word:{
+          fontSize: 15,
+          fontWeight:"bold",
+        },
 });
 
 export default AboutusScreen;

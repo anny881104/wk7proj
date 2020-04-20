@@ -20,18 +20,84 @@ import SettingsScreen from './src/screens/SettingsScreen';
 import AboutusScreen from './src/screens/AboutusScreen';
 import bookData from "./src/json/book.json";
 
+
+
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
 
+function Bar ({navigation}) {
+  return(
+    <Tab.Navigator initialRouteName = 'bar'
+      tabBarOptions = {{
+        activeTintColor: '#00b49f',
+        inactiveTintColor: '#818181',
+        style: {
+          height: 70 ,
+        }
+      }}>
+        <Tab.Screen name = "Home"
+        component = {HomeScreen}
+        options = {{
+          tabBarLabel: "Home",
+          tabBarIcon: ({focused}) => {
+            if(focused ){
+              return(
+              <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_home_seleced.png')}/>)}
+              else{
+                return(
+             <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_home.png')}/>)}
+            }
+        }}/>
+        <Tab.Screen name = "MyBook"
+        component = {MyBookScreen}
+        options = {{
+          tabBarLabel: "MyBook",
+          tabBarIcon: ({focused}) => {
+            if(focused){
+              return(
+                <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_mybook_selected.png')}/>)}
+                else{
+                  return(
+             <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_mybook.png')}/>)}
+          }
+        }}/>
+        <Tab.Screen name = "Favorites"
+        component = {FavoriteScreen}
+        options = {{
+          tabBarLabel: "Favorites",
+          tabBarIcon: ({focused}) => {
+            if(focused){
+              return(
+              <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_favorites_seleced.png')}/>)}
+              else {
+                return( <Image style = {{width:30,height:30}} source = {require('./assets/icon_bottomnav_favorites.png')}/>)}
+          }
+        }}/>
+      </Tab.Navigator>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //Homeheader
-const HomeStack = ({navigation}) => {
+const HomeStack  = ({navigation}) => {
   return (
       <Stack.Navigator >
         <Stack.Screen 
           name="HomeScreen" 
-          component={HomeScreen} 
+          component={Bar} 
           options={{
             title: bookData.Title1,
             headerTintColor: '#fff',
@@ -74,8 +140,8 @@ const MyBookStack  = ({navigation}) => {
   return (
       <Stack.Navigator >
         <Stack.Screen 
-          name="MyBookScreen" 
-          component={MyBookScreen} 
+        name = "Bar" 
+        component = {Bar}
           options={{
             title: bookData.Title2,
             headerTintColor: '#fff',
@@ -272,17 +338,18 @@ const CustomDrawerContent = ({ ...rest }) => {
 
 
 const App = () => {
-  <index />
+  
   const ref = React.useRef(null);
   return (
-    <NavigationContainer ref = {ref}>
+    
+    <NavigationContainer >
       <Drawer.Navigator 
-    drawerStyle={{ backgroundColor: '#ebebeb',width: 320,}}
+    drawerStyle={{ backgroundColor: '#ebebeb',width: 320}}
     drawerContentOptions={{
       activeBackgroundColor: '#00b49f',
       activeTintColor:'#fff',
       itemStyle: { marginLeft: 0, marginRight: 0,height:54,justifyContent: 'center' },
-      labelStyle: { fontSize: 20 },
+      labelStyle: { fontSize: 20 ,marginLeft: 10},
     }}
     drawerContent={props => <CustomDrawerContent {...props} />}
   >
@@ -295,26 +362,28 @@ const App = () => {
           drawerIcon: ({ tintColor }) => (
             <Image
               source={require('./assets/icon_bottomnav_home.png')}
-              style={{width:24, height: 24, tintColor: tintColor }}
+              style={{width:24, height: 24, tintColor: tintColor,marginLeft: 15 }}
             />
-          ),            
-        }
+          ),      
       }
-      />
+    }
+    />
+
+     
     <Drawer.Screen 
       name="MyBook" 
       component={MyBookStack} 
       options={
         {
-          drawerLabel: 'My Book',
+          drawerLabel: 'My Book', //標籤命名
           drawerIcon: ({ tintColor }) => (
             <Image
               source={require('./assets/icon_bottomnav_mybook.png')}
-              style={{width:24, height: 24, tintColor: tintColor }}
+              style={{width:24, height: 24, tintColor: tintColor,marginLeft: 15 }}
             />
-          ),            
-        }
+          ),      
       }
+    }
     />    
     <Drawer.Screen 
       name="Favorites" 
@@ -325,7 +394,7 @@ const App = () => {
           drawerIcon: ({ tintColor }) => (
             <Image
               source={require('./assets/icon_bottomnav_favorites.png')}
-              style={{width:24, height: 24, tintColor: tintColor }}
+              style={{width:24, height: 24, tintColor: tintColor,marginLeft: 15 }}
             />
           ),            
         }
@@ -340,7 +409,7 @@ const App = () => {
           drawerIcon: ({ tintColor }) => (
             <Image
               source={require('./assets/icon_drawer_setting.png')}
-              style={{width:24, height: 24, tintColor: tintColor }}
+              style={{width:24, height: 24, tintColor: tintColor,marginLeft: 15 }}
             />
           ),            
         }
@@ -355,14 +424,28 @@ const App = () => {
           drawerIcon: ({ tintColor }) => (
             <Image
               source={require('./assets/icon_drawer_aboutus.png')}
-              style={{width:24, height: 24, tintColor: tintColor }}
+              style={{width:24, height: 24, tintColor: tintColor,marginLeft: 15 }}
             />
           ),            
         }
       }
     />                
   </Drawer.Navigator>
+
+
+
+
+
+
+
+
+
+
+
   </NavigationContainer>
+
+    
+
   );
 }
     
@@ -382,8 +465,8 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:14,
     marginRight:120
-  }
-});
+  },
 
+});
 
 export default App;

@@ -1,23 +1,27 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet } from 'react-native';
+import { ScrollView,Text,StyleSheet,View } from 'react-native';
 
 // Make a component
 const FavoritesScreen = ({ navigation }) => {
     return (
         <ScrollView style={{paddingTop: 44}}>
-            <Text style={styles.Word}>YOU DON'T HAVE ANY FAVORITES</Text>
+             <View style={styles.box}>
+           <Text style={styles.word}>YOU DON'T HAVE ANY FAVORITES</Text>
+          </View>
         </ScrollView>
     );
 }
 const styles = StyleSheet.create({
-
-    Word:{
-        marginLeft:85,
-        marginTop:100,
-        fontSize: 15,
-        fontWeight:"bold",
-        
-    },
+    box:{
+        flex:1, 
+        marginTop:200,
+        alignItems:"center",
+        justifyContent:"center",
+      },
+      word:{
+          fontSize: 15,
+          fontWeight:"bold",
+        },
 });
 
 export default FavoritesScreen;
