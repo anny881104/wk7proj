@@ -1,3 +1,4 @@
+  
 import React from "react";
 import { ScrollView,Text,StyleSheet,View } from 'react-native';
 
@@ -30,4 +31,3 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
-  

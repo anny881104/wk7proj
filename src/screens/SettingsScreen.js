@@ -1,6 +1,7 @@
 import React from "react";
-import { ScrollView } from 'react-native';
+import { ScrollView,StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
+
 
 // Make a component
 const SettingsScreen = ({ navigation }) => {

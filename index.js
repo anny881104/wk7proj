@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Image } from 'react-native';
+import { Image,StyleSheet } from 'react-native';
 
 import HomeScreen from './src/screens/HomeScreen';
 import MyBookScreen from './src/screens/MyBookScreen';

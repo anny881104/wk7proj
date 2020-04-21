@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -143,7 +142,7 @@ const MyBookStack  = ({navigation}) => {
       <Stack.Navigator >
         <Stack.Screen 
         name = "Mybook" 
-        component = {MyBookScreen}
+        component = {Bar}
           options={{
             title: bookData.Title2,
             headerTintColor: '#fff',
