@@ -1,8 +1,8 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 19860,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://62-vux.anonymous.wk7proj.exp.direct",
   "packagerNgrokUrl": "https://packager.62-vux.anonymous.wk7proj.exp.direct",
   "ngrokPid": 6984
